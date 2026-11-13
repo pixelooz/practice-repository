@@ -126,11 +126,11 @@ Digit DP has only 7 because there are few good free problems for it.
 | ✅ | 8 | [Group Anagrams](https://leetcode.com/problems/group-anagrams/) | 🟡 Medium |
 | ✅ | 9 | [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) | 🟡 Medium |
 | ✅ | 10 | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) | 🟡 Medium |
-| ⬜ | 11 | [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) | 🟡 Medium |
+| ✅ | 11 | [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) | 🟡 Medium |
 | ✅ | 12 | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | 🟡 Medium |
 | ✅ | 13 | [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) | 🟡 Medium |
 | ⬜ | 14 | [4Sum II](https://leetcode.com/problems/4sum-ii/) | 🟡 Medium |
-| ⬜ | 15 | [Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/) | 🟡 Medium |
+| ✅ | 15 | [Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/) | 🟡 Medium |
 
 ### 2. Two Pointers
 
