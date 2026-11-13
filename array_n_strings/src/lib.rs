@@ -10,4 +10,5 @@ mod subarray_sum_equals_k;
 mod top_k_freq;
 mod two_sum;
 mod valid_anagram;
+mod valid_sudoku;
 mod word_pattern;
