@@ -140,10 +140,10 @@ Digit DP has only 7 because there are few good free problems for it.
 
 | Done | # | Problem | Difficulty |
 |:---:|:---:|---|:---:|
-| ⬜ | 1 | [Reverse String](https://leetcode.com/problems/reverse-string/) | 🟢 Easy |
-| ⬜ | 2 | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | 🟢 Easy |
-| ⬜ | 3 | [Is Subsequence](https://leetcode.com/problems/is-subsequence/) | 🟢 Easy |
-| ⬜ | 4 | [Move Zeroes](https://leetcode.com/problems/move-zeroes/) | 🟢 Easy |
+| ✅ | 1 | [Reverse String](https://leetcode.com/problems/reverse-string/) | 🟢 Easy |
+| ✅ | 2 | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | 🟢 Easy |
+| ✅ | 3 | [Is Subsequence](https://leetcode.com/problems/is-subsequence/) | 🟢 Easy |
+| ✅ | 4 | [Move Zeroes](https://leetcode.com/problems/move-zeroes/) | 🟢 Easy |
 | ⬜ | 5 | [Remove Element](https://leetcode.com/problems/remove-element/) | 🟢 Easy |
 | ⬜ | 6 | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | 🟢 Easy |
 | ⬜ | 7 | [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) | 🟢 Easy |
