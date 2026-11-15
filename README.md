@@ -1,2 +1,2 @@
-- [Leetcode Problems](leetcode-patterns.md)
+- [Leetcode Problems](leetcode-patterns-problem-set.md)
 - [System Design](system-design.md)
