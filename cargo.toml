@@ -1,3 +1,3 @@
 [workspace]
 resolver = "3"
-members = ["array_n_strings", "interior_mutability", "multithreading", "two_pointers", "unsafe_rust"]
+members = ["array_n_strings", "interior_mutability", "two_pointers", "unsafe_rust"]
