@@ -237,20 +237,20 @@ LeetCode shows which companies asked a problem and how often, but only to premiu
 
 | Done | # | Problem | Difficulty | Asked at | Rank |
 |:---:|:---:|---|:---:|:---:|:---:|
-| ⬜ | 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | 🟢 Easy | 120 / 25 | 🔥🔥🔥 #2 |
-| ⬜ | 2 | [Valid Anagram](https://leetcode.com/problems/valid-anagram/) | 🟢 Easy | 37 / 8 | 🔥🔥🔥 #41 |
-| ⬜ | 3 | [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/) | 🟢 Easy | 24 / 8 | 🔥🔥🔥 #64 |
-| ⬜ | 4 | [Majority Element](https://leetcode.com/problems/majority-element/) | 🟢 Easy | 22 / 8 | 🔥🔥🔥 #70 |
-| ⬜ | 5 | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) | 🟢 Easy | 20 / 5 | 🔥🔥 #107 |
-| ⬜ | 6 | [Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/) | 🟢 Easy | 15 / 6 | 🔥🔥 #175 |
-| ⬜ | 7 | [Ransom Note](https://leetcode.com/problems/ransom-note/) | 🟢 Easy | 14 / 6 | 🔥🔥 #196 |
-| ⬜ | 8 | [Group Anagrams](https://leetcode.com/problems/group-anagrams/) | 🟡 Medium | 80 / 22 | 🔥🔥🔥 #8 |
-| ⬜ | 9 | [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) | 🟡 Medium | 44 / 14 | 🔥🔥🔥 #15 |
-| ⬜ | 10 | [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) | 🟡 Medium | 51 / 13 | 🔥🔥🔥 #21 |
-| ⬜ | 11 | [Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/) | 🟡 Medium | 36 / 10 | 🔥🔥🔥 #29 |
-| ⬜ | 12 | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | 🟡 Medium | 38 / 8 | 🔥🔥🔥 #44 |
-| ⬜ | 13 | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) | 🟡 Medium | 35 / 7 | 🔥🔥🔥 #47 |
-| ⬜ | 14 | [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) | 🟡 Medium | 24 / 8 | 🔥🔥🔥 #59 |
+| ✅ | 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | 🟢 Easy | 120 / 25 | 🔥🔥🔥 #2 |
+| ✅ | 2 | [Valid Anagram](https://leetcode.com/problems/valid-anagram/) | 🟢 Easy | 37 / 8 | 🔥🔥🔥 #41 |
+| ✅ | 3 | [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/) | 🟢 Easy | 24 / 8 | 🔥🔥🔥 #64 |
+| ✅ | 4 | [Majority Element](https://leetcode.com/problems/majority-element/) | 🟢 Easy | 22 / 8 | 🔥🔥🔥 #70 |
+| ✅ | 5 | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) | 🟢 Easy | 20 / 5 | 🔥🔥 #107 |
+| ✅ | 6 | [Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/) | 🟢 Easy | 15 / 6 | 🔥🔥 #175 |
+| ✅ | 7 | [Ransom Note](https://leetcode.com/problems/ransom-note/) | 🟢 Easy | 14 / 6 | 🔥🔥 #196 |
+| ✅ | 8 | [Group Anagrams](https://leetcode.com/problems/group-anagrams/) | 🟡 Medium | 80 / 22 | 🔥🔥🔥 #8 |
+| ✅ | 9 | [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) | 🟡 Medium | 44 / 14 | 🔥🔥🔥 #15 |
+| ✅ | 10 | [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) | 🟡 Medium | 51 / 13 | 🔥🔥🔥 #21 |
+| ✅ | 11 | [Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/) | 🟡 Medium | 36 / 10 | 🔥🔥🔥 #29 |
+| ✅ | 12 | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | 🟡 Medium | 38 / 8 | 🔥🔥🔥 #44 |
+| ✅ | 13 | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) | 🟡 Medium | 35 / 7 | 🔥🔥🔥 #47 |
+| ✅ | 14 | [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) | 🟡 Medium | 24 / 8 | 🔥🔥🔥 #59 |
 | ⬜ | 15 | [Majority Element II](https://leetcode.com/problems/majority-element-ii/) | 🟡 Medium | 10 / 4 | 🔥🔥 #229 |
 
 ### Two Pointers
@@ -261,15 +261,15 @@ LeetCode shows which companies asked a problem and how often, but only to premiu
 
 | Done | # | Problem | Difficulty | Asked at | Rank |
 |:---:|:---:|---|:---:|:---:|:---:|
-| ⬜ | 1 | [Move Zeroes](https://leetcode.com/problems/move-zeroes/) | 🟢 Easy | 42 / 12 | 🔥🔥🔥 #18 |
-| ⬜ | 2 | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | 🟢 Easy | 39 / 10 | 🔥🔥🔥 #34 |
+| ✅ | 1 | [Move Zeroes](https://leetcode.com/problems/move-zeroes/) | 🟢 Easy | 42 / 12 | 🔥🔥🔥 #18 |
+| ✅ | 2 | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | 🟢 Easy | 39 / 10 | 🔥🔥🔥 #34 |
 | ⬜ | 3 | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | 🟢 Easy | 24 / 8 | 🔥🔥🔥 #53 |
 | ⬜ | 4 | [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) | 🟢 Easy | 16 / 8 | 🔥🔥🔥 #87 |
-| ⬜ | 5 | [Reverse String](https://leetcode.com/problems/reverse-string/) | 🟢 Easy | 16 / 6 | 🔥🔥 #104 |
+| ✅ | 5 | [Reverse String](https://leetcode.com/problems/reverse-string/) | 🟢 Easy | 16 / 6 | 🔥🔥 #104 |
 | ⬜ | 6 | [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/) | 🟢 Easy | 15 / 6 | 🔥🔥 #106 |
 | ⬜ | 7 | [Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/) | 🟢 Easy | 16 / 8 | 🔥🔥 #149 |
 | ⬜ | 8 | [Remove Element](https://leetcode.com/problems/remove-element/) | 🟢 Easy | 10 / 6 | 🔥🔥 #205 |
-| ⬜ | 9 | [Is Subsequence](https://leetcode.com/problems/is-subsequence/) | 🟢 Easy | 14 / 4 | 🔥🔥 #214 |
+| ✅ | 9 | [Is Subsequence](https://leetcode.com/problems/is-subsequence/) | 🟢 Easy | 14 / 4 | 🔥🔥 #214 |
 | ⬜ | 10 | [Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/) | 🟢 Easy | 12 / 2 | 🔥🔥 #310 |
 | ⬜ | 11 | [3Sum](https://leetcode.com/problems/3sum/) | 🟡 Medium | 52 / 12 | 🔥🔥🔥 #10 |
 | ⬜ | 12 | [Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | 🟡 Medium | 52 / 12 | 🔥🔥🔥 #30 |
