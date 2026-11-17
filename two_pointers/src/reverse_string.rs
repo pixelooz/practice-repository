@@ -1,5 +1,5 @@
-pub fn reverse_string(chars: &mut Vec<char>) {
-    if chars.len() == 0 {
+pub fn reverse_string(chars: &mut [char]) {
+    if chars.is_empty() {
         return;
     }
     let mut i = 0;

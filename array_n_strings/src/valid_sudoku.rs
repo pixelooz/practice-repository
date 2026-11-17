@@ -7,8 +7,8 @@ pub fn is_valid_sudoku(board: Vec<Vec<char>>) -> bool {
 
     let mut square: HashMap<(usize, usize), HashSet<char>> = HashMap::new();
 
-    for r in 0..9 as usize {
-        for c in 0..9 as usize {
+    for (r, _) in board.iter().enumerate().take(9) {
+        for (c, _) in board.iter().enumerate().take(9) {
             if board[r][c] == '.' {
                 continue;
             }
@@ -18,11 +18,7 @@ pub fn is_valid_sudoku(board: Vec<Vec<char>>) -> bool {
             if !col.entry(c).or_default().insert(board[r][c]) {
                 return false;
             }
-            if !square
-                .entry((r / 3, c / 3))
-                .or_default()
-                .insert(board[r][c])
-            {
+            if !square.entry((r / 3, c / 3)).or_default().insert(board[r][c]) {
                 return false;
             }
         }

@@ -1,5 +1,5 @@
-pub fn move_zeros(nums: &mut Vec<i32>) {
-    if nums.len() < 1 {
+pub fn move_zeros(nums: &mut [i32]) {
+    if nums.is_empty() {
         return;
     }
     let mut i = 0;

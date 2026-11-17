@@ -18,10 +18,7 @@ pub fn is_subsequence(s: String, t: String) -> bool {
             return false;
         }
     }
-    if i < s.len() && j >= t.len() {
-        return false;
-    }
-    true
+    !(i < s.len() && j >= t.len())
 }
 
 #[test]

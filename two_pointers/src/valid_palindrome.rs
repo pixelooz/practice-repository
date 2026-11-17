@@ -1,7 +1,4 @@
 pub fn is_palindrome(s: String) -> bool {
-    if s.len() <= 0 {
-        return true;
-    }
     let chars = s.as_bytes();
     let mut i = 0;
     let mut j = chars.len() - 1;
@@ -14,7 +11,7 @@ pub fn is_palindrome(s: String) -> bool {
             j -= 1;
             continue;
         }
-        if chars[i].to_ascii_lowercase() != chars[j].to_ascii_lowercase() {
+        if !chars[i].eq_ignore_ascii_case(&chars[j]) {
             return false;
         }
         i += 1;

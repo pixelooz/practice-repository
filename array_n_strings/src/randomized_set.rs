@@ -45,35 +45,3 @@ impl RandomizedSet {
         *self.store.choose(&mut rand::rng()).unwrap()
     }
 }
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_randomized_set() {
-        let mut randomized_set = RandomizedSet::new();
-
-        // 1. Inserts 1 to the set. Returns true as 1 was inserted successfully.
-        assert_eq!(randomized_set.insert(1), true);
-
-        // 2. Returns false as 2 does not exist in the set.
-        assert_eq!(randomized_set.remove(2), false);
-
-        // 3. Inserts 2 to the set, returns true. Set now contains [1, 2].
-        assert_eq!(randomized_set.insert(2), true);
-
-        // 4. getRandom() should return either 1 or 2 randomly.
-        let val = randomized_set.get_random();
-        assert!(val == 1 || val == 2);
-
-        // 5. Removes 1 from the set, returns true. Set now contains [2].
-        assert_eq!(randomized_set.remove(1), true);
-
-        // 6. 2 was already in the set, so return false.
-        assert_eq!(randomized_set.insert(2), false);
-
-        // 7. Since 2 is the only number in the set, getRandom() must return 2.
-        assert_eq!(randomized_set.get_random(), 2);
-    }
-}

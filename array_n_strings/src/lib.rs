@@ -4,6 +4,7 @@ mod find_unique_char;
 mod group_anagrams;
 mod isomorphic_strings;
 mod longest_consecutive_subarr;
+mod majority_element_ii;
 mod product_except_self;
 mod randomized_set;
 mod ransom_note;
