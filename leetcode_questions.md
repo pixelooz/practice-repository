@@ -251,7 +251,7 @@ LeetCode shows which companies asked a problem and how often, but only to premiu
 | ✅ | 12 | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | 🟡 Medium | 38 / 8 | 🔥🔥🔥 #44 |
 | ✅ | 13 | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) | 🟡 Medium | 35 / 7 | 🔥🔥🔥 #47 |
 | ✅ | 14 | [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) | 🟡 Medium | 24 / 8 | 🔥🔥🔥 #59 |
-| ⬜ | 15 | [Majority Element II](https://leetcode.com/problems/majority-element-ii/) | 🟡 Medium | 10 / 4 | 🔥🔥 #229 |
+| ↪️ | 15 | [Majority Element II](https://leetcode.com/problems/majority-element-ii/) | 🟡 Medium | 10 / 4 | 🔥🔥 #229 |
 
 ### Two Pointers
 
