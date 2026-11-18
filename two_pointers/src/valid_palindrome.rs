@@ -1,4 +1,4 @@
-pub fn is_palindrome(s: String) -> bool {
+pub fn is_palindrome(s: &str) -> bool {
     let chars = s.as_bytes();
     let mut i = 0;
     let mut j = chars.len() - 1;

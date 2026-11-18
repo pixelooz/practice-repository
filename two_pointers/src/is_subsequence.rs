@@ -1,4 +1,4 @@
-pub fn is_subsequence(s: String, t: String) -> bool {
+pub fn is_subsequence(s: &str, t: &str) -> bool {
     if s.len() > t.len() {
         return false;
     }
@@ -23,13 +23,13 @@ pub fn is_subsequence(s: String, t: String) -> bool {
 
 #[test]
 fn test_is_subsequence() {
-    let s = "abc".into();
-    let t = "asdfbkku".into();
+    let s = "abc";
+    let t = "asdfbkku";
     let res = is_subsequence(s, t);
     assert!(!res, "should be not true");
 
-    let s = "abc".into();
-    let t = "asdfbkkuecc".into();
+    let s = "abc";
+    let t = "asdfbkkuecc";
     let res = is_subsequence(s, t);
     assert!(res, "should true");
 }
