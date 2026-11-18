@@ -2,6 +2,11 @@
 
 **55 patterns · 559 problems** (549 unique). Problems were chosen and ranked from company-tagged frequency data pulled from four independent datasets, not from a curated list. **Coverage:** 100 of the 100 most-asked free problems, 200 of the top 200, and 300 of the top 300 are in this file.
 
+## Index
+
+[Pattern Based Index](#pattern-based-index)
+[Top 100](#the-100-most-asked-problems)
+
 ## How the data was built
 
 LeetCode shows which companies asked a problem and how often, but only to premium users, and I can't call its API from here. Community members have scraped that data into public GitHub repos. I used four of them, from different dates, so one scraper's gaps or one era's trends can't dominate:
@@ -30,7 +35,7 @@ LeetCode shows which companies asked a problem and how often, but only to premiu
 
 **Legend:** 🟢 Easy · 🟡 Medium · 🔴 Hard · 🔥🔥🔥 top 100 overall · 🔥🔥 top 400 · 🔥 top 1,000 · **Asked at** = companies (all-time) / companies in the last six months, averaged over the two newest datasets
 
-## The 100 most-asked problems overall
+## The 100 most-asked problems 
 
 | # | Problem | Difficulty | Asked at | In pattern |
 |:---:|---|:---:|:---:|---|
@@ -135,7 +140,7 @@ LeetCode shows which companies asked a problem and how often, but only to premiu
 | 102 | [Unique Paths](https://leetcode.com/problems/unique-paths/) | 🟡 Medium | 19 / 6 | Grid DP |
 | 103 | [Task Scheduler](https://leetcode.com/problems/task-scheduler/) | 🟡 Medium | 23 / 6 | Top-K Elements |
 
-## Contents
+## Pattern Based Index 
 
 **Arrays & Strings**
 
