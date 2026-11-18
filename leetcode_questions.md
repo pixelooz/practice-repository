@@ -271,7 +271,7 @@ _Sorted input, pairs/triplets, in-place rewrites, palindromes_
 |  ↪️  |  3  | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) |  🟢 Easy   |  24 / 8  | 🔥🔥🔥 #53 |
 |  ↪️  |  4  | [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)                     |  🟢 Easy   |  16 / 8  | 🔥🔥🔥 #87 |
 |  ✅  |  5  | [Reverse String](https://leetcode.com/problems/reverse-string/)                                           |  🟢 Easy   |  16 / 6  | 🔥🔥 #104  |
-|  ⬜  |  6  | [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/)                   |  🟢 Easy   |  15 / 6  | 🔥🔥 #106  |
+|  ✅  |  6  | [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/)                   |  🟢 Easy   |  15 / 6  | 🔥🔥 #106  |
 |  ⬜  |  7  | [Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/)                                 |  🟢 Easy   |  16 / 8  | 🔥🔥 #149  |
 |  ⬜  |  8  | [Remove Element](https://leetcode.com/problems/remove-element/)                                           |  🟢 Easy   |  10 / 6  | 🔥🔥 #205  |
 |  ✅  |  9  | [Is Subsequence](https://leetcode.com/problems/is-subsequence/)                                           |  🟢 Easy   |  14 / 4  | 🔥🔥 #214  |
