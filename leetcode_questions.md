@@ -4,8 +4,8 @@
 
 ## Index
 
-[Pattern Based Index](#pattern-based-index)
-[Top 100](#the-100-most-asked-problems)
+[Pattern Based Index](#pattern-based-index)\
+[Top 100](#the-100-most-asked-problems)\
 
 ## How the data was built
 
