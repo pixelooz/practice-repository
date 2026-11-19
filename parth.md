@@ -1,9 +1,9 @@
 ## DSA Revision Index
 
-| #   | Problem                                                                             | Pattern                     | Time / Space        |
-| :-- | :---------------------------------------------------------------------------------- | :-------------------------- | :------------------ |
-| 844 | [Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/) | Two Pointers (Reverse Scan) | `O(N + M)` / `O(1)` |
-| 443 | [String Compression](https://leetcode.com/problems/string-compression/)             | Two Pointers (Read / Write) | `O(N)` / `O(1)`\    |
+| #   | Problem                                                                             | Pattern                     | Time / Space        | The Question's Note                                                                       |
+| :-- | :---------------------------------------------------------------------------------- | :-------------------------- | :------------------ | :---------------------------------------------------------------------------------------- |
+| 844 | [Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/) | Two Pointers (Reverse Scan) | `O(N + M)` / `O(1)` | [Link](#844-backspace-string-comparehttpsleetcodecomproblemsbackspace-string-compare)     |
+| 443 | [String Compression](https://leetcode.com/problems/string-compression/)             | Two Pointers (Read / Write) | `O(N)` / `O(1)`\    | [Link](#443-string-compressionhttpsleetcodecomproblemsstring-compression)                 |
 
 ---
 
