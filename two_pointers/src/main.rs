@@ -7,6 +7,7 @@ mod move_zeros;
 mod remove_dup_sorted_arr;
 mod remove_element;
 mod reverse_string;
+mod sort_colors;
 mod squares_sorted_arr;
 mod string_compression;
 mod valid_palindrome;
