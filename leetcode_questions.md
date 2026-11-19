@@ -273,7 +273,7 @@ _Sorted input, pairs/triplets, in-place rewrites, palindromes_
 |  ✅  |  5  | [Reverse String](https://leetcode.com/problems/reverse-string/)                                           |  🟢 Easy   |  16 / 6  | 🔥🔥 #104  |
 |  ✅  |  6  | [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/)                   |  🟢 Easy   |  15 / 6  | 🔥🔥 #106  |
 |  ↪️  |  7  | [Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/)                                 |  🟢 Easy   |  16 / 8  | 🔥🔥 #149  |
-|  ↪️  |  8  | [Remove Element](https://leetcode.com/problems/remove-element/)                                           |  🟢 Easy   |  10 / 6  | 🔥🔥 #205  |
+|  ✅  |  8  | [Remove Element](https://leetcode.com/problems/remove-element/)                                           |  🟢 Easy   |  10 / 6  | 🔥🔥 #205  |
 |  ✅  |  9  | [Is Subsequence](https://leetcode.com/problems/is-subsequence/)                                           |  🟢 Easy   |  14 / 4  | 🔥🔥 #214  |
 |  ↪️  | 10  | [Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/)                       |  🟢 Easy   |  12 / 2  | 🔥🔥 #310  |
 |  ⬜  | 11  | [3Sum](https://leetcode.com/problems/3sum/)                                                               | 🟡 Medium  | 52 / 12  | 🔥🔥🔥 #10 |
