@@ -278,7 +278,7 @@ _Sorted input, pairs/triplets, in-place rewrites, palindromes_
 |  ↪️  | 10  | [Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/)                       |  🟢 Easy   |  12 / 2  | 🔥🔥 #310  |
 |  ⬜  | 11  | [3Sum](https://leetcode.com/problems/3sum/)                                                               | 🟡 Medium  | 52 / 12  | 🔥🔥🔥 #10 |
 |  ✅  | 12  | [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)                     | 🟡 Medium  | 52 / 12  | 🔥🔥🔥 #30 |
-|  ⬜  | 13  | [String Compression](https://leetcode.com/problems/string-compression/)                                   | 🟡 Medium  | 40 / 10  | 🔥🔥🔥 #32 |
+|  ✅  | 13  | [String Compression](https://leetcode.com/problems/string-compression/)                                   | 🟡 Medium  | 40 / 10  | 🔥🔥🔥 #32 |
 |  ⬜  | 14  | [Sort Colors](https://leetcode.com/problems/sort-colors/)                                                 | 🟡 Medium  |  37 / 9  | 🔥🔥🔥 #37 |
 |  ⬜  | 15  | [4Sum](https://leetcode.com/problems/4sum/)                                                               | 🟡 Medium  |  20 / 6  | 🔥🔥🔥 #88 |
 |  ⬜  | 16  | [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)     | 🟡 Medium  |  14 / 6  | 🔥🔥 #140  |

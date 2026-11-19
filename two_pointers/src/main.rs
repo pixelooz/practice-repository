@@ -8,6 +8,7 @@ mod remove_dup_sorted_arr;
 mod remove_element;
 mod reverse_string;
 mod squares_sorted_arr;
+mod string_compression;
 mod valid_palindrome;
 mod valid_palindrome_ii;
 
