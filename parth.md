@@ -83,6 +83,8 @@ the remainder, updating `closest` whenever `sum.abs_diff(target) < closest.abs_d
    * **Yes** $\implies$ **Same-Direction Two Pointers (`read`/`write` or `slow`/`fast`)**.
    * *Signal:* One pointer scans ahead while the other writes compacted output or marks a group boundary (e.g., *String Compression, Remove Duplicates, Move Zeroes,
    Linked List Cycle*).
+
+---
  
 ### 881. Boats to Save People
 
