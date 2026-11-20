@@ -1,11 +1,13 @@
 ## DSA Revision Index
 
-| #   | Problem                                                                             | Pattern                               | Time / Space        | The Question's Note                           |
-| :-- | :---------------------------------------------------------------------------------- | :------------------------------------ | :------------------ | :---------------------------------------------|
-| 844 | [Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/) | Two Pointers (Reverse Scan)           | `O(N + M)` / `O(1)` | [Link](#844-backspace-string-compare)         |
-| 443 | [String Compression](https://leetcode.com/problems/string-compression/)             | Two Pointers (Read / Write)           | `O(N)` / `O(1)`\    | [Link](#443-string-compression)               |
-| 75  | [Sort Colors](https://leetcode.com/problems/sort-colors/)                           | Three Pointers (3-Way Partition)      | `O(N)` / `O(1)`     | [Link](#75-sort-colors)                       |
-| 16  | [3Sum Closest](https://leetcode.com/problems/3sum-closest/)                         | Sort + Two Pointers (k-Sum)           | `O(N^2)` / `O(1)`   | [Link](#16-3sum-closest)                      |
+| #   | Problem                                                                             | Pattern                               | Time / Space            | The Question's Note                                                     |
+| :-- | :---------------------------------------------------------------------------------- | :------------------------------------ | :------------------     | :-----------------------------------------------------------------------|
+| 844 | [Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/) | Two Pointers (Reverse Scan)           | `O(N + M)` / `O(1)`     | [Link](#844-backspace-string-compare)                                   |
+| 443 | [String Compression](https://leetcode.com/problems/string-compression/)             | Two Pointers (Read / Write)           | `O(N)` / `O(1)`\        | [Link](#443-string-compression)                                         |
+| 75  | [Sort Colors](https://leetcode.com/problems/sort-colors/)                           | Three Pointers (3-Way Partition)      | `O(N)` / `O(1)`         | [Link](#75-sort-colors)                                                 |
+| 16  | [3Sum Closest](https://leetcode.com/problems/3sum-closest/)                         | Sort + Two Pointers (k-Sum)           | `O(N^2)` / `O(1)`       | [Link](#16-3sum-closest)                                                |
+|  *  | Concept                                                                             | Sliding Window \|\| Two Pointer       |  N/A                    | [Link](#sliding-window-vs-opposite-ends-vs-same-direction-two-pointers) |
+| 881 | [Boats to Save People](https://leetcode.com/problems/boats-to-save-people/)         | Sort + Two Pointers (Greedy)          | `O(N log N)` / `O(1)`   | [Link](#881-boats-to-save-people)                                       |
 
 ---
 
@@ -64,3 +66,31 @@ the remainder, updating `closest` whenever `sum.abs_diff(target) < closest.abs_d
   - Compare **absolute** distance (`sum.abs_diff(target)` -> `u32`, overflow-safe), not raw `target - sum`.
   - Initialize `closest = nums[0] + nums[1] + nums[2]` instead of an `i32::MAX` sentinel—eliminates a separate `smallest_diff` variable.
   - Skip duplicate outer values (`if i > 0 && nums[i] == nums[i - 1] { continue; }`) to avoid redundant work.
+ 
+---
+
+### Sliding Window Vs Opposite Ends Vs Same Direction Two Pointers
+
+1. **Must the element be contiguous (subarray/substring) - meaning I CANNOT sort?**
+   * **Yes** + asks for longest / shortest / count of valid windows ==> **Sliding Window** [`low`..`high` expanding and shrinking].
+
+2. **Does order NOT matter (so I can sort), OR is it already sorted / symmetric, AND am I pairing or comparing extremes?**
+   * **Yes** $\implies$ **Opposite-Ends Two Pointers (`low = 0`, `high = n`)**.
+   * *Signal:* Every step lets you make a greedy decision on the smallest or largest remaining element (e.g., *2Sum Sorted, 3Sum, 3Sum Closest, Boats to Save People,
+   Container With Most Water, Valid Palindrome*).
+
+3. **Must I preserve original order while *filtering / overwriting in-place* or tracking *two speeds*?**
+   * **Yes** $\implies$ **Same-Direction Two Pointers (`read`/`write` or `slow`/`fast`)**.
+   * *Signal:* One pointer scans ahead while the other writes compacted output or marks a group boundary (e.g., *String Compression, Remove Duplicates, Move Zeroes,
+   Linked List Cycle*).
+ 
+### 881. Boats to Save People
+
+**Pattern:** Sort + Opposite-Ends Two Pointers (Greedy) | **Complexity:** `O(N log N)` time, `O(1)` extra space
+
+**Trick:** Sort `people`, then use opposite-end pointers (`low = 0`, `high = len`). Every iteration takes the heaviest remaining person (`high -= 1`); if a 
+distinct lightest person still exists and fits (`low < high && people[low] + people[high] <= limit`), pair them (`low += 1`). Count 1 boat per iteration.
+
+**Notes & Gotchas:**
+  - Not a sliding window—contiguity isn't required, so sorting is allowed (and necessary). Pairing adjacent elements after sorting fails on `[1, 2, 4, 5], limit = 6`.
+  - Decrementing `high -= 1` first inside `while low < high` avoids `usize` underflow and ensures a lone middle person (`low == high`) isn't paired with themselves.
