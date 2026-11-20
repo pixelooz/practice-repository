@@ -284,7 +284,7 @@ _Sorted input, pairs/triplets, in-place rewrites, palindromes_
 |  ✅  | 16  | [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)     | 🟡 Medium  |  14 / 6  | 🔥🔥 #140  |
 |  ↪️  | 17  | [3Sum Closest](https://leetcode.com/problems/3sum-closest/)                                               | 🟡 Medium  |  12 / 6  | 🔥🔥 #160  |
 |  ↪️  | 18  | [Boats to Save People](https://leetcode.com/problems/boats-to-save-people/)                               | 🟡 Medium  |  12 / 5  | 🔥🔥 #224  |
-|  ⬜  | 19  | [K-diff Pairs in an Array](https://leetcode.com/problems/k-diff-pairs-in-an-array/)                       | 🟡 Medium  |  7 / 2   | 🔥🔥 #316  |
+|  ✅  | 19  | [K-diff Pairs in an Array](https://leetcode.com/problems/k-diff-pairs-in-an-array/)                       | 🟡 Medium  |  7 / 2   | 🔥🔥 #316  |
 |  ⬜  | 20  | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)                                 |  🔴 Hard   | 71 / 14  | 🔥🔥🔥 #9  |
 
 ### Sliding Window
