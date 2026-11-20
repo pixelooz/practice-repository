@@ -1,14 +1,15 @@
 ## DSA Revision Index
 
-| #   | Problem                                                                             | Pattern                               | Time / Space        | The Question's Note                                                                       |
-| :-- | :---------------------------------------------------------------------------------- | :------------------------------------ | :------------------ | :---------------------------------------------------------------------------------------- |
-| 844 | [Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/) | Two Pointers (Reverse Scan)           | `O(N + M)` / `O(1)` | [Link](#844-backspace-string-comparehttpsleetcodecomproblemsbackspace-string-compare)     |
-| 443 | [String Compression](https://leetcode.com/problems/string-compression/)             | Two Pointers (Read / Write)           | `O(N)` / `O(1)`\    | [Link](#443-string-compressionhttpsleetcodecomproblemsstring-compression)                 |
-| 75  | [Sort Colors](https://leetcode.com/problems/sort-colors/)                           | Three Pointers (3-Way Partition)      | `O(N)` / `O(1)`     | [Link](#75-sort-colorshttpsleetcodecomproblemssort-colors)                                |
+| #   | Problem                                                                             | Pattern                               | Time / Space        | The Question's Note                           |
+| :-- | :---------------------------------------------------------------------------------- | :------------------------------------ | :------------------ | :---------------------------------------------|
+| 844 | [Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/) | Two Pointers (Reverse Scan)           | `O(N + M)` / `O(1)` | [Link](#844-backspace-string-compare)         |
+| 443 | [String Compression](https://leetcode.com/problems/string-compression/)             | Two Pointers (Read / Write)           | `O(N)` / `O(1)`\    | [Link](#443-string-compression)               |
+| 75  | [Sort Colors](https://leetcode.com/problems/sort-colors/)                           | Three Pointers (3-Way Partition)      | `O(N)` / `O(1)`     | [Link](#75-sort-colors)                       |
+| 16  | [3Sum Closest](https://leetcode.com/problems/3sum-closest/)                         | Sort + Two Pointers (k-Sum)           | `O(N^2)` / `O(1)`   | [Link](#16-3sum-closest)                      |
 
 ---
 
-### [844. Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/)
+### 844. Backspace String Compare 
 
 **Pattern:** Two Pointers (Reverse Scan) | **Complexity:** `O(N + M)` time, `O(1)` space
 
@@ -22,7 +23,7 @@ helper and compare both in a `loop`/`match`.
 
 ---
 
-### [443. String Compression](https://leetcode.com/problems/string-compression/)
+### 443. String Compression
 
 **Pattern:** Two Pointers (Read / Write) | **Complexity:** `O(N)` time, `O(1)`\* space
 
@@ -37,7 +38,7 @@ group per outer iteration with a nested `while` — writing `ch` + `count` digit
 
 ---
 
-### [75. Sort Colors](https://leetcode.com/problems/sort-colors/)
+### 75. Sort Colors
 
 **Pattern:** Three Pointers (Dutch National Flag) | **Complexity:** `O(N)` time (1-pass), `O(1)` space
 
@@ -49,3 +50,17 @@ Loop `while mid < high`: on `0` swap with `low` & advance both; on `1` advance `
   - `mid` advances after swapping with `low` because `nums[low]` is guaranteed `1` (or `low == mid`), never unknown.
   - `mid` must **not** advance after swapping with `high`, because the swapped-in element came from the unknown zone and still needs inspection.
   - Initializing `high = nums.len()` (exclusive) and doing `high -= 1` before swapping guarantees zero `usize` underflow (even on `[]` or `[2]`).
+
+---
+
+### 16. 3Sum Closest
+
+**Pattern:** Sort + Two Pointers (k-Sum Reduction) | **Complexity:** `O(N^2)` time, `O(1)` extra space
+
+**Trick:** Sort the array (`O(N log N)` is free under `O(N^2)`). Fix one element with outer loop `i`, then run two pointers (`low = i + 1`, `high = n - 1`) on 
+the remainder, updating `closest` whenever `sum.abs_diff(target) < closest.abs_diff(target)` and returning immediately on `sum == target`.
+
+**Notes & Gotchas:**
+  - Compare **absolute** distance (`sum.abs_diff(target)` -> `u32`, overflow-safe), not raw `target - sum`.
+  - Initialize `closest = nums[0] + nums[1] + nums[2]` instead of an `i32::MAX` sentinel—eliminates a separate `smallest_diff` variable.
+  - Skip duplicate outer values (`if i > 0 && nums[i] == nums[i - 1] { continue; }`) to avoid redundant work.

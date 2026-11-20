@@ -1,8 +1,11 @@
 #![allow(dead_code, unused)]
 
+mod _3sum_closest;
 mod backspace_str_compare;
+mod boats_to_save_people;
 mod intersection_two_arr;
 mod is_subsequence;
+mod k_diff_pairs_arr;
 mod move_zeros;
 mod remove_dup_sorted_arr;
 mod remove_element;
@@ -10,6 +13,8 @@ mod reverse_string;
 mod sort_colors;
 mod squares_sorted_arr;
 mod string_compression;
+mod trapping_rain_water;
+mod two_sum_ii;
 mod valid_palindrome;
 mod valid_palindrome_ii;
 
