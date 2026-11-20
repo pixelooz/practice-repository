@@ -1,13 +1,14 @@
 ## DSA Revision Index
 
 | #   | Problem                                                                             | Pattern                               | Time / Space            | The Question's Note                                                     |
-| :-- | :---------------------------------------------------------------------------------- | :------------------------------------ | :------------------     | :-----------------------------------------------------------------------|
+| :-- | :---------------------------------------------------------------------------------- | :------------------------------------ | :---------------------- | :-----------------------------------------------------------------------|
 | 844 | [Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/) | Two Pointers (Reverse Scan)           | `O(N + M)` / `O(1)`     | [Link](#844-backspace-string-compare)                                   |
 | 443 | [String Compression](https://leetcode.com/problems/string-compression/)             | Two Pointers (Read / Write)           | `O(N)` / `O(1)`\        | [Link](#443-string-compression)                                         |
 | 75  | [Sort Colors](https://leetcode.com/problems/sort-colors/)                           | Three Pointers (3-Way Partition)      | `O(N)` / `O(1)`         | [Link](#75-sort-colors)                                                 |
 | 16  | [3Sum Closest](https://leetcode.com/problems/3sum-closest/)                         | Sort + Two Pointers (k-Sum)           | `O(N^2)` / `O(1)`       | [Link](#16-3sum-closest)                                                |
 |  *  | Concept                                                                             | Sliding Window \|\| Two Pointer       |  N/A                    | [Link](#sliding-window-vs-opposite-ends-vs-same-direction-two-pointers) |
 | 881 | [Boats to Save People](https://leetcode.com/problems/boats-to-save-people/)         | Sort + Two Pointers (Greedy)          | `O(N log N)` / `O(1)`   | [Link](#881-boats-to-save-people)                                       |
+| 532 | [K-diff Pairs in an Array](https://leetcode.com/problems/k-diff-pairs-in-an-array/) | HashMap / Sort + Same-Dir 2P          | `O(N)` / `O(N)`         | [Link](#532-k-diff-pairs-in-an-array)
 
 ---
 
@@ -96,3 +97,24 @@ distinct lightest person still exists and fits (`low < high && people[low] + peo
 **Notes & Gotchas:**
   - Not a sliding window—contiguity isn't required, so sorting is allowed (and necessary). Pairing adjacent elements after sorting fails on `[1, 2, 4, 5], limit = 6`.
   - Decrementing `high -= 1` first inside `while low < high` avoids `usize` underflow and ensures a lone middle person (`low == high`) isn't paired with themselves.
+
+---
+
+### 532. K-diff Pairs in an Array
+
+**Pattern:** Frequency HashMap (`O(N)` time, `O(N)` space) **or** Sort + Same-Direction Two Pointers (`O(N log N)` time, `O(1)` extra space)
+
+**Trick:**
+  1. **(HashMap — Optimal Time)** Build a frequency map first, then loop over unique `(num, freq)` entries: if `k == 0`, count `freq >= 2`; if `k > 0`, count 
+  `map.contains_key(&(num + k))`.
+  2. **(Sort + Two Pointers — Optimal Space):** Sort `nums` and move `low = 0`, `high = 1` in the **same direction**: diff `< k` -> `high += 1`; 
+  diff `> k` -> `low += 1` (if `low == high`, `high += 1`); diff `== k` -> increment count and skip all duplicate `nums[high]` values.
+
+**Notes & Gotchas:**
+  - **Opposite-ends two pointers fails for differences:** both `low += 1` and `high -= 1` *decrease* `nums[high] - nums[low]`, breaking monotonicity 
+  (e.g., `[1, 3, 4, 6], k = 2`). Always pick pointer directions so one moves the expression UP and the other DOWN.
+  - **Naive 1-pass `curr - k` HashMap fails** on unsorted order (`[3, 1], k = 2`), duplicate pairs (`[1, 3, 3], k = 2`), and 3+ copies when `k == 0` (`[1, 1, 1]`).
+  - Checking **only** `num + k` on unique keys guarantees each valid pair `{a, a + k}` is counted exactly once regardless of input order.
+  - In Two Pointers, skipping duplicate `nums[high]` values inside `diff == k` keeps `high > low` automatically (if you skip `low` or both instead, enforce 
+  `high = high.max(low + 1)` for `k == 0`).
+  - Compare `nums[low].abs_diff(nums[high])` directly against `k as u32` (after `if k < 0 { return 0; }`) — don't cast `abs_diff` to `i32`, which wraps on large diffs.
