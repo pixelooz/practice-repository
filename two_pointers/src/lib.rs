@@ -17,7 +17,3 @@ mod trapping_rain_water;
 mod two_sum_ii;
 mod valid_palindrome;
 mod valid_palindrome_ii;
-
-fn main() {
-    println!("Hello, world!");
-}

@@ -205,3 +205,23 @@ bottleneck regardless of what's in the middle.
   - A `while` inside a `for` is still `O(N)` because `left` and `right` only ever move forward (`<= 2N` total pointer moves).
 
 ## Sliding Window Revision Index
+
+| #   | Problem                                                                             | Pattern                               | Time / Space            | The Question's Note                                                     |
+| :-- | :---------------------------------------------------------------------------------- | :------------------------------------ | :---------------------- | :-----------------------------------------------------------------------|
+| 219 | [Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/)       | Fixed Sliding Window (HashSet)        | `O(N)` / `O(min(N, k))` | [Link](#219-contains-duplicate-ii)                                      |
+
+---
+
+### 219. Contains Duplicate II
+
+**Pattern:** Fixed-Size Sliding Window + HashSet (`O(N)` time, `O(min(N, k))` space)
+
+**Trick:** Maintain a `HashSet` holding only the last `k` elements (`nums[i - k .. i)`). For each `i`, evict `nums[i - k - 1]` if `i > k` (just fell outside distance `k`), 
+then check-and-insert in one lookup with `if !set.insert(nums[i]) { return true; }`.
+
+**Notes & Gotchas:**
+  - A sliding window isn't just two pointers comparing endpoints—it's a range plus a **window state** (`HashSet`) summarizing everything inside the window in `O(1)`.
+  - "Fixed window of size `k`" means **at most** `k` previous elements; check on every step even before `i` reaches `k` (handles `k >= nums.len()` and duplicates closer 
+  than `k`).
+  - Evicting `nums[i - k - 1]` under `if i > k` prevents `usize` underflow (`i >= k + 1`), and guarding `k <= 0` upfront returns `false` in `O(1)` without scanning.
+  - Pre-sizing with `HashSet::with_capacity(k.min(nums.len()) + 1)` avoids rehashing without over-allocating on huge `k`.
