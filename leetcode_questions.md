@@ -297,7 +297,7 @@ _Contiguous subarray/substring with a constraint (longest, shortest, count)_
 | :--: | :-: | ------------------------------------------------------------------------------------------------------------------------------- | :--------: | :------: | :--------: |
 |  ✅  |  1  | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)                               |  🟢 Easy   | 86 / 20  | 🔥🔥🔥 #6  |
 |  ↪️  |  2  | [Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/)                                                   |  🟢 Easy   |  14 / 6  | 🔥🔥 #154  |
-|  ⬜  |  3  | [Maximum Average Subarray I](https://leetcode.com/problems/maximum-average-subarray-i/)                                         |  🟢 Easy   |  11 / 6  | 🔥🔥 #323  |
+|  ↪️  |  3  | [Maximum Average Subarray I](https://leetcode.com/problems/maximum-average-subarray-i/)                                         |  🟢 Easy   |  11 / 6  | 🔥🔥 #323  |
 |  ⬜  |  4  | [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | 🟡 Medium  | 100 / 28 | 🔥🔥🔥 #7  |
 |  ⬜  |  5  | [Permutation in String](https://leetcode.com/problems/permutation-in-string/)                                                   | 🟡 Medium  |  16 / 8  | 🔥🔥 #111  |
 |  ⬜  |  6  | [Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)                                           | 🟡 Medium  |  16 / 6  | 🔥🔥 #124  |

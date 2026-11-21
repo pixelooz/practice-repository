@@ -206,9 +206,10 @@ bottleneck regardless of what's in the middle.
 
 ## Sliding Window Revision Index
 
-| #   | Problem                                                                             | Pattern                               | Time / Space            | The Question's Note                                                     |
-| :-- | :---------------------------------------------------------------------------------- | :------------------------------------ | :---------------------- | :-----------------------------------------------------------------------|
-| 219 | [Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/)       | Fixed Sliding Window (HashSet)        | `O(N)` / `O(min(N, k))` | [Link](#219-contains-duplicate-ii)                                      |
+| #   | Problem                                                                                 | Pattern                               | Time / Space            | The Question's Note                                                     |
+| :-- | :-------------------------------------------------------------------------------------- | :------------------------------------ | :---------------------- | :-----------------------------------------------------------------------|
+| 219 | [Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/)           | Fixed Sliding Window (HashSet)        | `O(N)` / `O(min(N, k))` | [Link](#219-contains-duplicate-ii)                                      |
+| 643 | [Maximum Average Subarray I](https://leetcode.com/problems/maximum-average-subarray-i/) | Fixed Sliding Window                  | `O(N)` / `O(1)`         | [Link](#643-maximum-average-subarray-i)                                 |
 
 ---
 
@@ -225,3 +226,19 @@ then check-and-insert in one lookup with `if !set.insert(nums[i]) { return true;
   than `k`).
   - Evicting `nums[i - k - 1]` under `if i > k` prevents `usize` underflow (`i >= k + 1`), and guarding `k <= 0` upfront returns `false` in `O(1)` without scanning.
   - Pre-sizing with `HashSet::with_capacity(k.min(nums.len()) + 1)` avoids rehashing without over-allocating on huge `k`.
+
+---
+
+### 643. Maximum Average Subarray I
+
+**Pattern:** Fixed-Size Sliding Window (`O(N)` time, `O(1)` space)
+
+**Trick:** Precompute the first full window sum `nums[..k]` (`max_sum = window_sum`), then slide `i` from `k..nums.len()` updating `window_sum += nums[i] - nums[i - k]` 
+and tracking `max_sum`. Divide by `k as f64` **once** at the very end.
+
+**Notes & Gotchas:**
+  - Unlike *Contains Duplicate II* ("at most `k`"), this requires **exact** length `k`: never update the answer before `k` elements are in the window (otherwise partial 
+  windows on negative arrays like `[-1, -2, -3], k = 3` corrupt the max).
+  - Precomputing `nums[..k]` and looping `k..nums.len()` eliminates both `if i >= k` / `if i + 1 >= k` branches inside the loop and avoids any `f64::MIN` sentinel.
+  - Maximize integer `sum` (in `i64` to avoid overflow) and divide by `k` once at the end instead of dividing in `f64` on every iteration.
+  - `usize::try_from(k)` already rejects `k < 0`; guard `k == 0 || k > nums.len()` instead.
