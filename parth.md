@@ -8,7 +8,8 @@
 | 16  | [3Sum Closest](https://leetcode.com/problems/3sum-closest/)                         | Sort + Two Pointers (k-Sum)           | `O(N^2)` / `O(1)`       | [Link](#16-3sum-closest)                                                |
 |  *  | Concept                                                                             | Sliding Window \|\| Two Pointer       |  N/A                    | [Link](#sliding-window-vs-opposite-ends-vs-same-direction-two-pointers) |
 | 881 | [Boats to Save People](https://leetcode.com/problems/boats-to-save-people/)         | Sort + Two Pointers (Greedy)          | `O(N log N)` / `O(1)`   | [Link](#881-boats-to-save-people)                                       |
-| 532 | [K-diff Pairs in an Array](https://leetcode.com/problems/k-diff-pairs-in-an-array/) | HashMap / Sort + Same-Dir 2P          | `O(N)` / `O(N)`         | [Link](#532-k-diff-pairs-in-an-array)
+| 532 | [K-diff Pairs in an Array](https://leetcode.com/problems/k-diff-pairs-in-an-array/) | HashMap / Sort + Same-Dir 2P          | `O(N)` / `O(N)`         | [Link](#532-k-diff-pairs-in-an-array)                                   |
+| 42  | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)           | Opposite-Ends Two Pointers            | `O(N)` / `O(1)`         | [Link](#42-trapping-rain-water)                                         |
 
 ---
 
@@ -118,3 +119,19 @@ distinct lightest person still exists and fits (`low < high && people[low] + peo
   - In Two Pointers, skipping duplicate `nums[high]` values inside `diff == k` keeps `high > low` automatically (if you skip `low` or both instead, enforce 
   `high = high.max(low + 1)` for `k == 0`).
   - Compare `nums[low].abs_diff(nums[high])` directly against `k as u32` (after `if k < 0 { return 0; }`) — don't cast `abs_diff` to `i32`, which wraps on large diffs.
+
+---
+
+### 42. Trapping Rain Water
+
+**Pattern:** Opposite-Ends Two Pointers (`O(N)` time, `O(1)` space)
+
+**Trick:** Water above index `i` is `min(left_max, right_max) - height[i]`. Instead of precomputing prefix/suffix max arrays (`O(N)` space), keep `left`/`right` 
+pointers and running `left_max`/`right_max`; always advance whichever side has the **smaller** max (`left_max < right_max`), because that side is guaranteed to be the 
+bottleneck regardless of what's in the middle.
+
+**Notes & Gotchas:**
+  - Comparing `left_max.cmp(&right_max)` is cleaner to prove in interviews than `height[left].cmp(&height[right])` (both work because the pointer at the larger max stays 
+  pinned, but `left_max < right_max <= true_right_max` makes the bottleneck proof immediate).
+  - Updating `left_max = left_max.max(height[left])` *before* `water += left_max - height[left]` guarantees a non-negative contribution without an `if/else`.
+  - Guard `if height.len() < 3 { return 0; }` upfront to avoid `height.len() - 1` underflow on empty inputs and skip inputs that cannot trap water.
