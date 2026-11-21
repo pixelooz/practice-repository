@@ -1,4 +1,41 @@
-## DSA Revision Index
+# Topic Index
+| #   | Pattern                                                                    | 
+| :-- | :------------------------------------------------------------------------- |
+| 1   | [Two Pointers](#topic-two-pointers)                                        |
+| 2   | [Sliding Window](#topic-sliding-window)                                    |
+
+## Topic: Two Pointers
+
+**When to Use:**
+  - Array/string is sorted (or order doesn't matter so you can sort it) and you are pairing/comparing elements or partitioning in-place.
+  - Or array is unsorted and you must filter/compress in-place while preserving original order.
+  - **vs. Sliding Window:** If contiguity is *not* required (i.e. you're allowed to sort), it's almost never Sliding Window—it's Sort + Two Pointers.
+
+**The Monotonicity Rule (Picking Pointer Directions):**
+  - Always choose pointer directions so **one moves your target expression UP and the other moves it DOWN**:
+    - **Sum (`a[low] + a[high]`):** `low += 1` (UP), `high -= 1` (DOWN) -> **Opposite Ends**.
+    - **Difference (`a[high] - a[low]`):** `high += 1` (UP), `low += 1` (DOWN) -> **Same Direction**.
+
+**The 4 Core Sub-Patterns:**
+  - **1. Opposite Ends (`low = 0`, `high = len` or `len - 1`):** Pairing extremes, greedy matching (Boats), k-Sum (sort + fix outer `i` + opposite-ends on `i+1..n`), 
+  bottleneck tracking (Trapping Rain Water).
+  - **2. Read / Write (`read`, `write`):** In-place filtering or run-length compression. Safe only when `write <= read` holds at every step. Flush contiguous groups 
+  via lookahead (`i + 1 == len || a[i] != a[i + 1]`) or a nested group-by-group `while` to avoid a dangling final group.
+  - **3. Same-Direction Chase (`low = 0`, `high = 1`):** Sorted difference pairs (`a[high] - a[low]`). Keep `high > low`, and skip duplicates *inside* the `== k` 
+  branch rather than adding top-of-loop `if` guards.
+  - **4. Partition & Parallel Streams:**
+    - *3-Way Partition:* Maintain 4 half-open zones `[0..low)`, `[low..mid)`, `[mid..high)`, `[high..n)`. Trust the invariant—never add `if` guards to skip harmless 
+    `O(1)` swaps.
+    - *Parallel Streams (2 inputs):* Never tangle twin state (`i`/`j`, `ci`/`cj`) in one loop—extract a `next_valid(&mut iter)` helper. If future elements decide past 
+    elements, reverse direction (`.rev()`) to drop `O(N)` stack space to `O(1)`.
+
+**Rust Gotchas:**
+  - Avoid `usize` underflow when moving backwards: use `.rev()` iterators for single-pass consumption, or initialize `high = len` (exclusive) and do `high -= 1` 
+  *before* indexing/swapping inside `while low < high`.
+  - If initializing `high = len - 1` directly, guard `len < 2` (or `len < 3`) upfront.
+  - Use `sort_unstable()` for primitives (`i32`, etc.)—faster with zero extra allocation.
+
+## Two Pointer Revision Index
 
 | #   | Problem                                                                             | Pattern                               | Time / Space            | The Question's Note                                                     |
 | :-- | :---------------------------------------------------------------------------------- | :------------------------------------ | :---------------------- | :-----------------------------------------------------------------------|
@@ -135,3 +172,36 @@ bottleneck regardless of what's in the middle.
   pinned, but `left_max < right_max <= true_right_max` makes the bottleneck proof immediate).
   - Updating `left_max = left_max.max(height[left])` *before* `water += left_max - height[left]` guarantees a non-negative contribution without an `if/else`.
   - Guard `if height.len() < 3 { return 0; }` upfront to avoid `height.len() - 1` underflow on empty inputs and skip inputs that cannot trap water.
+
+***
+
+## Topic: Sliding Window
+
+**When to Use (All 3 Must Hold):**
+  - Contiguous subarray or substring (order is fixed—you cannot sort).
+  - Asking for longest, shortest, max/min, or count of valid subarrays/substrings.
+  - **Monotonicity:** Expanding `right += 1` pushes the window property in one consistent direction, and shrinking `left += 1` pushes it in the opposite direction.
+  - **When it FAILS:** Negative numbers in sum problems break monotonicity -> use **Prefix Sum + HashMap** instead.
+
+**The 3 Core Templates (Inclusive `[left..=right]`, length = `right - left + 1`, `O(N)` time):**
+  - **1. Fixed Size (`k`):**
+    - Loop `right` in `0..n`: add `a[right]`, if `right >= k` remove `a[right - k]`, if `right + 1 >= k` update answer.
+  - **2. Variable — Longest / Count (Shrink *while invalid*, update *after*):**
+    - Add `a[right]` -> `while !is_valid()` remove `a[left]` & `left += 1` -> window is now valid: `best = best.max(right - left + 1)` (or `count += right - left + 1`).
+  - **3. Variable — Shortest (Shrink *while valid*, update *inside*):**
+    - Add `a[right]` -> `while is_valid()` record `best = best.min(right - left + 1)` *before* shrinking, then remove `a[left]` & `left += 1`.
+
+**Key Math Formulas:**
+  - **Counting valid subarrays ending at `right`:** Once `[left..=right]` is valid (for "at most" conditions), all suffixes `[left..=right]` .. `[right..=right]` are 
+  valid -> `count += right - left + 1`.
+  - **The "Exact `K`" Trick:** Sliding window cannot directly count *exact* `K` distinct/odd/etc. subarrays -> write one Template 2 helper and compute 
+  `exact(K) = at_most(K) - at_most(K - 1)`.
+
+**Rust Gotchas:**
+  - For ASCII strings, prefer `[usize; 26]` or `[usize; 128]` with `s.as_bytes()` over `HashMap<char, usize>` (stack-allocated, faster, no `.entry()` ceremony; index 
+  with `(b - b'a') as usize` or `b as usize`).
+  - If using a `HashMap` and relying on `map.len()` for distinct count, **always `map.remove(&key)` when its frequency drops to `0`** so zero-frequency ghosts aren't 
+  counted.
+  - A `while` inside a `for` is still `O(N)` because `left` and `right` only ever move forward (`<= 2N` total pointer moves).
+
+## Sliding Window Revision Index
